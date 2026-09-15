@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ryan Jackson — Projects</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header id="site-header">
+    <h1>Ryan Jackson</h1>
+    <p class="tagline">Founder, Convergent Frontier Research (CFR)</p>
+    <nav class="main-nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html" aria-current="page">Projects</a></li>
+        <li><a href="about.html">About / Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="content-section">
+      <h2>Current Projects</h2>
+
+      <div class="filter-bar" role="group" aria-label="Filter projects by category">
+        <button type="button" class="filter-btn" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" class="filter-btn" data-filter="vehicle" aria-pressed="false">Vehicles</button>
+        <button type="button" class="filter-btn" data-filter="derivative" aria-pressed="false">Derivative Applications</button>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card" data-category="vehicle">
+          <h3>Hover Vehicle Stabilization</h3>
+          <p>
+            A ground-effect vehicle concept (working title Aeroskiff) built around a
+            novel stabilization method, with several derivative applications explored
+            across other industries.
+          </p>
+        </article>
+        <article class="project-card" data-category="derivative">
+          <h3>Adaptive Motion Lock</h3>
+          <p>A derivative concept applying the core stabilization method to camera stabilization.</p>
+        </article>
+        <article class="project-card" data-category="derivative">
+          <h3>Predictive Marine Stabilization</h3>
+          <p>A derivative concept applying forward-sensing stabilization to watercraft.</p>
+        </article>
+        <article class="project-card" data-category="vehicle">
+          <h3>Recon ATV</h3>
+          <p>A terrain-adaptive stabilization ATV with a removable, ruggedized display interface.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Convergent Frontier Research. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

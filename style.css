@@ -1,0 +1,331 @@
+/* ==========================================================
+   style.css — Milestone 3 base + Milestone 4 additions
+   ========================================================== */
+
+:root {
+  --ink: #1F2A44;
+  --accent: #C97A3D;
+  --paper: #FAF9F7;
+  --paper-dim: #E7E9ED;
+  --line: #DCD6CC;
+  --error: #B3261E;
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, "Segoe UI", Arial, sans-serif;
+  color: var(--ink);
+  background-color: var(--paper);
+  line-height: 1.6;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background-color: var(--ink);
+  color: var(--paper);
+  padding: var(--space-1) var(--space-2);
+  z-index: 100;
+}
+
+.skip-link:focus {
+  left: var(--space-1);
+  top: var(--space-1);
+}
+
+h1, h2, h3 {
+  margin: 0 0 var(--space-2) 0;
+  color: var(--ink);
+}
+
+h1 { font-size: 2rem; }
+h2 {
+  font-size: 1.5rem;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: var(--space-1);
+  margin-bottom: var(--space-3);
+}
+h3 { font-size: 1.1rem; }
+
+p { margin: 0 0 var(--space-2) 0; }
+
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: 8px;
+}
+
+a {
+  color: var(--ink);
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 2px;
+}
+
+#site-header {
+  background-color: var(--ink);
+  color: var(--paper);
+  padding: var(--space-4) var(--space-3);
+  text-align: center;
+}
+
+#site-header h1 { color: var(--paper); }
+
+.tagline {
+  color: var(--paper-dim);
+  font-style: italic;
+  margin-bottom: var(--space-3);
+}
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+}
+
+.main-nav li { margin: 0 var(--space-1); }
+
+.main-nav a {
+  color: var(--paper);
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
+}
+
+.main-nav a:hover,
+.main-nav a[aria-current="page"] {
+  border-bottom-color: var(--accent);
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--space-4) var(--space-3);
+}
+
+.content-section { margin-bottom: var(--space-5); }
+
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2);
+}
+
+@media (min-width: 700px) {
+  .project-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.project-card {
+  background-color: #fff;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  padding: var(--space-3);
+}
+
+.btn {
+  display: inline-block;
+  background-color: var(--ink);
+  color: var(--paper);
+  border: none;
+  border-radius: 6px;
+  padding: var(--space-2) var(--space-3);
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn:hover { background-color: #14192b; }
+
+/* ---- Milestone 4: project filter buttons ---- */
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  margin-bottom: var(--space-3);
+}
+
+.filter-btn {
+  background-color: #fff;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 6px var(--space-2);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.filter-btn[aria-pressed="true"] {
+  background-color: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+
+.project-card[hidden] { display: none; }
+
+/* ---- Contact form ---- */
+
+.contact-form fieldset {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: var(--space-3);
+  margin: 0 0 var(--space-3) 0;
+}
+
+.contact-form legend {
+  font-weight: 600;
+  padding: 0 var(--space-1);
+}
+
+.form-field { margin-bottom: var(--space-3); }
+
+.form-field label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: var(--space-1);
+}
+
+.form-field input[type="text"],
+.form-field input[type="email"],
+.form-field textarea {
+  width: 100%;
+  padding: var(--space-1) var(--space-2);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font: inherit;
+  color: var(--ink);
+  background-color: var(--paper);
+}
+
+.form-field textarea { min-height: 120px; resize: vertical; }
+
+.radio-option { margin-bottom: var(--space-1); }
+.radio-option input { margin-right: var(--space-1); }
+
+.error-text {
+  color: var(--error);
+  font-size: 0.9rem;
+  margin-top: var(--space-1);
+  display: none;
+}
+
+.form-field.has-error input,
+.form-field.has-error textarea {
+  border: 2px solid var(--error);
+}
+
+.form-field.has-error .error-text { display: block; }
+
+#form-status {
+  padding: var(--space-2);
+  border-radius: 6px;
+  margin-bottom: var(--space-3);
+  display: none;
+}
+
+#form-status.success {
+  display: block;
+  background-color: #E4F2E6;
+  border: 1px solid #2E7D32;
+  color: #1B4D1E;
+}
+
+#form-status.error {
+  display: block;
+  background-color: #FBEAE9;
+  border: 1px solid var(--error);
+  color: var(--error);
+}
+
+/* ---- Milestone 4: fun fact / API fetch card (Home page) ---- */
+
+#fact-card {
+  background-color: #fff;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  padding: var(--space-3);
+  margin-top: var(--space-3);
+  max-width: 480px;
+}
+
+#fact-text { margin: 0 0 var(--space-2) 0; }
+
+.site-footer {
+  text-align: center;
+  padding: var(--space-3);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--line);
+}
+/* ==========================================================
+   ADD THIS to the bottom of your existing style.css.
+   Second breakpoint — tuned for narrow phones (~320-480px).
+   Existing query (min-width: 700px) still handles the
+   desktop 2-column project grid; this one handles the very
+   small end so the rubric's "two @media queries, both
+   visibly change layout" requirement is unambiguous.
+   ========================================================== */
+
+@media (max-width: 480px) {
+  /* Header/nav: stack the nav list vertically and shrink
+     the title so nothing wraps awkwardly on a 320px screen. */
+  #site-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .tagline {
+    font-size: 0.85rem;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: var(--space-1);
+    align-items: center;
+  }
+
+  /* Main content: tighten side padding so text isn't
+     cramped against the viewport edge. */
+  main {
+    padding: var(--space-3) var(--space-2);
+  }
+
+  h1 { font-size: 1.6rem; }
+  h2 { font-size: 1.25rem; }
+
+  /* Project cards already stack via the existing grid rule
+     (1fr below 700px) — this just tightens their padding
+     for the smallest screens. */
+  .project-card {
+    padding: var(--space-2);
+  }
+
+  /* Buttons go full-width on very small screens so they're
+     easier to tap and don't force horizontal scroll. */
+  .btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+}

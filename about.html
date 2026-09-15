@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ryan Jackson — About &amp; Contact</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header id="site-header">
+    <h1>Ryan Jackson</h1>
+    <p class="tagline">Founder, Convergent Frontier Research (CFR)</p>
+    <nav class="main-nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="about.html" aria-current="page">About / Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="content-section">
+      <h2>About Me</h2>
+      <p>
+        I'm based in McBee, South Carolina, and currently pursuing a Computer
+        Science degree along with business coursework. Outside of CFR, I work
+        on formalizing my concepts into a full IP portfolio.
+      </p>
+    </section>
+
+    <section class="content-section">
+      <h2>Contact</h2>
+      <p>Reach out to discuss licensing, partnerships, or collaboration.</p>
+
+      <div id="form-status" role="alert"></div>
+
+      <form class="contact-form" id="contact-form" novalidate>
+
+        <div class="form-field" id="name-field">
+          <label for="name">Full name</label>
+          <input type="text" id="name" name="name" required aria-describedby="name-error">
+          <span class="error-text" id="name-error">Please enter your name.</span>
+        </div>
+
+        <div class="form-field" id="email-field">
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" required aria-describedby="email-error">
+          <span class="error-text" id="email-error">Please enter a valid email address.</span>
+        </div>
+
+        <fieldset>
+          <legend>Reason for contact</legend>
+          <div class="radio-option">
+            <input type="radio" id="reason-licensing" name="reason" value="Licensing" checked>
+            <label for="reason-licensing">Licensing</label>
+          </div>
+          <div class="radio-option">
+            <input type="radio" id="reason-partnership" name="reason" value="Partnership">
+            <label for="reason-partnership">Partnership</label>
+          </div>
+          <div class="radio-option">
+            <input type="radio" id="reason-general" name="reason" value="General inquiry">
+            <label for="reason-general">General inquiry</label>
+          </div>
+        </fieldset>
+
+        <div class="form-field" id="message-field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required aria-describedby="message-error"></textarea>
+          <span class="error-text" id="message-error">Please enter a message.</span>
+        </div>
+
+        <button type="submit" class="btn">Send message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Convergent Frontier Research. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
